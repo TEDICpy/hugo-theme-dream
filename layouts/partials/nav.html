@@ -12,4 +12,22 @@
   <div class="item">
     <i class="large link icon theme-switch" onclick="themeSwitch()"></i>
   </div>
+  {{ $siteLanguages := site.Languages}}
+  {{ $pageLang := .Page.Lang}}
+  {{- range .Page.AllTranslations }}
+      {{ $translation := . }}
+      {{- range sort $siteLanguages "Weight" "asc" }}
+          {{- if eq $translation.Lang .Lang }}
+              {{ if eq $pageLang .Lang}}
+              <div class="item">
+                  <a class="large link flagselect" href="{{ $translation.Permalink | relURL }}">{{ .Params.languageFlag }}&nbsp;</a>
+              </div>
+              {{ else }}
+              <div class="item">
+                  <a class="large link flagnoselect" href="{{ $translation.Permalink | relURL }}">{{ .Params.languageFlag }}&nbsp;</a>
+              </div>
+              {{ end }}
+          {{- end }}
+      {{- end }}
+  {{- end }}
 </nav>

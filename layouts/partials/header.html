@@ -1,13 +1,13 @@
 <article class="dream-header">
   <section class="ui top attached center aligned segment">
-    <div class="ui small circular image">
+    <div class="ui small image">
       {{ if isset .Site.Params "avatar" }}
         <img src="{{ .Site.Params.avatar | relURL }}">
       {{ end }}
     </div>
 
     <h1 class="ui medium header">
-      {{- .Site.Params.author -}}{{- i18n "blogAlias" -}}
+      {{- .Site.Params.title -}}
       <div class="sub header" style="margin-top: 0.5rem;">{{- .Site.Params.motto -}}</div>
     </h1>
 
@@ -64,11 +64,11 @@
 
   <section class="ui bottom attached center aligned segment">
     {{ if .Site.Params.siteStartYear }}
-      <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
+      <p>cc by-sa {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Params.Author }}</p>
     {{ else }}
-      <p>© {{ now.Year }} {{ .Site.Title }}</p>
+      <p>cc by-sa {{ now.Year }} {{ .Site.Params.Author }}</p>
     {{ end }}
 
-    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+    <p>Hecho con <a href="https://gohugo.io/" target="_blank">Hugo</a> con tema <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a> y mucho 💚</p>
   </section>
 </article>
