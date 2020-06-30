@@ -64,11 +64,14 @@
 
   <section class="ui bottom attached center aligned segment">
     {{ if .Site.Params.siteStartYear }}
-      <p>cc by-sa {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Params.Author }}</p>
+      <p><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Creative Commons by-sa</a> {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} <a href={{.Site.Params.AuthorURL}}>{{ .Site.Params.Author }}</a></p>
     {{ else }}
-      <p>cc by-sa {{ now.Year }} {{ .Site.Params.Author }}</p>
+      <p><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Creative Commons by-sa</a> {{ now.Year }} {{ .Site.Params.Author }}</p>
     {{ end }}
 
-    <p>Hecho con <a href="https://gohugo.io/" target="_blank">Hugo</a> con tema <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a> y mucho 💚</p>
+    <p>{{.Site.Params.madewhith}} <a href="https://gohugo.io/" target="_blank">Hugo</a> {{.Site.Params.madewhith2}} <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a> {{.Site.Params.madewhith3}} 💚</p>
+    <p>{{.Site.Params.thanks}}</p>
+    <p><a href="https://www.apc.org/es/"><img src="/img/logo_apc.png" width="30%"></a></p>
+
   </section>
 </article>
