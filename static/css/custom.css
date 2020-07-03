@@ -7,9 +7,14 @@
   color: black;
   font-size: 150%;
 }
+
 .flagnoselect {
   padding: 0px;
   margin: 0px;
   color: #666;
   font-size: 150%;
+}
+
+.ui.image {
+  max-width: 30%;
 }
